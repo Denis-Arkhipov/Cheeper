@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+    <link rel="icon" type="image/png" th:href="@{/images/ChickIcon.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login-styles.css}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">Cheeper Chat</div>
+        </header>
+        <main>
+            <h1>Registration</h1>
+        <form class="reg-form" name="registrationForm" method="post" action="/registration">
+            <input type="text" name="regUsername" placeholder="Username">
+            <input type="password" name="regPassword" placeholder="Password" minlength="3" autocomplete="off">
+<!--            <input type="file" name="photo" accept="image/*">-->
+<!--            <button type="submit" name="buttonRegLogin">Login</button>-->
+            <button class="butReg" type="submit" name="sendRegistration">Registration</button>
+        </form>
+        <form name="loginForm" method="get" action="/login">
+            <button type="submit" name="buttonRegLogin">Login</button>
+        </form>
+    </div>
+</body>
+</html>

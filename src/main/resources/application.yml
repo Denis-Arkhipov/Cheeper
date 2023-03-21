@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+# Параметры подключения к БД
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cheeper
+    username: root
+    password: 111
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  servlet:
+      multipart:
+        max-file-size: 30MB
+        max-request-size: 30MB
+#  mvc:
+#    view:
+#      prefix: /resources/templates/
+#      suffix: .html
+
+
+upload:
+  dir: C:/Projects/Cheeper/src/main/resources/static/images
+
+avatar:
+  dir: /images/
+
+#  thymeleaf:
+#    expose-request-thymeleaf: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security:
+            web:
+              csrf: DEBUG

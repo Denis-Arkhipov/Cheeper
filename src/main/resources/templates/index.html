@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cheeper Chat</title>
+    <link rel="icon" type="image/png" th:href="@{/images/ChickIcon.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+<!--    <meta name="_csrf" th:content="${_csrf.token}"/>-->
+    <!-- default header name is X-CSRF-TOKEN -->
+<!--    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+    <body>
+        <div class="wrapper">
+            <header>
+<!--                <div class="sign-out-button">-->
+                    <form id="formLogout" class="sign-out-button" name="formLogout" action="/logout" method="POST">
+                        <button type="submit" name="signOut">Sign out</button>
+                    </form>
+<!--                </div>-->
+                <div class="logo">Cheeper Chat</div>
+            </header>
+            <main>
+                <aside class="wrap-people">
+                    <ul class="people">
+                        <li class="you-name" sec:authentication="name"></li>
+                    </ul>
+                </aside>
+                <div class="wrap-messages">
+                    <section class="messages">
+                    </section>
+                    <aside class="send-message">
+                        <form class="formChat" name="formChat" method="POST" onsubmit="return false;">
+<!--                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
+                            <input class="message-input-field" type="text" name="textMessage"
+                                   autocomplete="off"
+                                   placeholder="Write a message...">
+                            <button type="submit" name="sendMessage">Send</button>
+                        </form>
+                    </aside>
+                </div>
+            </main>
+        </div>
+
+    <script src="/js/jquery-3.6.3.min.js"></script>
+    <script src="/js/beans.js"></script>
+    <script src="/js/scripts.js"></script>
+    </body>
+</html>
